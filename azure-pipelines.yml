@@ -32,9 +32,9 @@ resources:
     endpoint: sonic-net
   - repository: buildimage
     type: github
-    name: sonic-net/sonic-buildimage
+    name: Pterosaur/sonic-buildimage
     endpoint: sonic-net
-    ref: master
+    ref: spc6
 
 parameters:
 - name: TIMEOUT_IN_MINUTES_PR_TEST
@@ -208,5 +208,4 @@ stages:
   - template: .azure-pipelines/pr_test_template.yml@sonic-mgmt
     parameters:
       CHECKOUT_SONIC_MGMT: ${{ parameters.CHECKOUT_SONIC_MGMT }}
-      GLOBAL_PARAMS:
-        PTF_MODIFIED: $(PTF_MODIFIED)
+      PTF_MODIFIED: $(PTF_MODIFIED)
